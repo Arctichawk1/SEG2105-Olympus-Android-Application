@@ -1,7 +1,7 @@
 # SEG2105-Olympus
 SEG2105 final project, Ivana Erlich, Anshu Sharma, Batuhan Basoglu, Mary Tran
 
-https://github.com/ebivibe/SEG2105-Olympus
+https://github.com/batuhan-basoglu/SEG2105-Olympus-Android-Application
 
 Build Status 
 [![CircleCI](https://circleci.com/gh/ebivibe/SEG2105-Olympus/tree/master.svg?style=svg&circle-token=01dbbc3800d7ee80871796675582a67ba7c83604)](https://circleci.com/gh/ebivibe/SEG2105-Olympus/tree/master)
