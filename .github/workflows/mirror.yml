@@ -1,0 +1,30 @@
+name: 🪞 Push to Mirrors
+
+on: [ push, delete, create ]
+
+# Ensures that only one mirror task will run at a time.
+concurrency:
+  group: git-mirror
+
+jobs:
+  gitlab:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror to GitLab
+        uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACTIONS_SSH_KEY }}
+        with:
+          source-repo: "git@github.com:batuhan-basoglu/SEG2105-Olympus-Android-Application.git"
+          destination-repo: "git@gitlab.com:batuhan-basoglu/SEG2105-Olympus-Android-Application.git"
+
+  codeberg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror to Codeberg
+        uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACTIONS_SSH_KEY }}
+        with:
+          source-repo: "git@github.com:batuhan-basoglu/SEG2105-Olympus-Android-Application.git"
+          destination-repo: "git@codeberg.org:batuhan-basoglu/SEG2105-Olympus-Android-Application.git"
