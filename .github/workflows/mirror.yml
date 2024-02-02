@@ -28,3 +28,14 @@ jobs:
         with:
           source-repo: "git@github.com:batuhan-basoglu/SEG2105-Olympus-Android-Application.git"
           destination-repo: "git@codeberg.org:batuhan-basoglu/SEG2105-Olympus-Android-Application.git"
+
+  forgejo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror to Forgejo
+        uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACTIONS_SSH_KEY }}
+        with:
+          source-repo: "git@github.com:batuhan-basoglu/SEG2105-Olympus-Android-Application.git"
+          destination-repo: "git@git.batuhan.basoglu.co:batuhan-basoglu/SEG2105-Olympus-Android-Application.git"
